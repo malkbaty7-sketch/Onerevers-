@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  tika-service:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ./backend/tika-service:/app
+    command: bash -lc "pip install -r requirements.txt && uvicorn main:app --host 0.0.0.0 --port 8001"
+    ports:
+      - "8001:8001"
+
+  pdf2word-service:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ./backend/pdf2word-service:/app
+    command: bash -lc "pip install -r requirements.txt && uvicorn main:app --host 0.0.0.0 --port 8002"
+    ports:
+      - "8002:8002"

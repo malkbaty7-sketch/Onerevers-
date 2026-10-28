@@ -5,7 +5,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kaatibdocspro.ui.navigation.AppDestinations
+import com.kaatibdocspro.ui.screens.BatchToolsScreen
 import com.kaatibdocspro.ui.screens.ConversionScreen
+import com.kaatibdocspro.ui.screens.DocumentDetailScreen
 import com.kaatibdocspro.ui.screens.DocumentListScreen
 import com.kaatibdocspro.ui.screens.DocumentViewerScreen
 import com.kaatibdocspro.ui.screens.ExtractionScreen
@@ -29,8 +31,16 @@ fun AppNavHost() {
             DocumentListScreen(navController)
         }
 
+        composable(AppDestinations.DOCUMENT_DETAIL) {
+            DocumentDetailScreen(navController)
+        }
+
         composable(AppDestinations.PDF_TOOLS) {
             PdfToolsScreen(navController)
+        }
+
+        composable(AppDestinations.BATCH_TOOLS) {
+            BatchToolsScreen(navController)
         }
 
         composable(AppDestinations.DOCUMENT_VIEWER) {

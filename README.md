@@ -1,32 +1,62 @@
 # KaatibDocsPro
 
-A unified Android document suite bringing together a Kaatib-style UX with document processing capabilities inspired by ClearPDF, Apache Tika, and PDF-to-Word conversion workflows.
+KaatibDocsPro is a unified Android document platform that combines a modern Arabic-first user experience with enterprise-style document processing.
 
-## What is included
-- Android app shell with Compose UI
-- Document list and file-management workflow
-- PDF tools section
-- Document viewer placeholder and metadata screen
-- Text extraction screen with backend-ready hook
-- PDF-to-Word conversion workflow placeholder
-- Room + DataStore foundation
-- Retrofit API layer foundation
-- Backend service stubs for FastAPI
+## Included capabilities
+- PDF file listing and browsing
+- PDF tools section (merge, split, compress, scan, manage)
+- Document preview and metadata screen
+- Text extraction flow using Apache Tika
+- PDF-to-Word conversion flow using a backend service
+- Local document history with Room
+- Persistent settings with DataStore
+- Compose-based navigation and UI structure
+- Backend service stubs for real API integration
 
-## Project architecture
-- App module: Android UI and navigation
-- Data layer: Room database, repository, settings store
-- Network layer: Retrofit + Moshi API templates
-- Backend: Tika extraction service and PDF-to-Word conversion service
+## Source project mapping
+- Kaatib: app shell, UX, home experience
+- ClearPDF: PDF features, document toolkit patterns
+- Apache Tika: extraction and metadata reading
+- pdf2word: conversion flow and backend design
 
-## Run the Android app
+## Current implementation status
+The repository now contains the following core building blocks:
+- Android application shell
+- Jetpack Compose screen flow
+- Home dashboard
+- Document list and file selection flow
+- PDF tools route
+- Viewer and extraction screens
+- Conversion screen
+- Settings screen
+- DataStore settings management
+- Room database foundation
+- Retrofit and Moshi API scaffolding
+- Backend service prototypes for Tika and PDF to Word
+- Architecture and roadmap documentation
+
+## App structure
+```text
+app/
+├── src/main/java/com/kaatibdocspro/
+│   ├── AppNavHost.kt
+│   ├── MainActivity.kt
+│   ├── KaatibDocsProApplication.kt
+│   ├── data/
+│   ├── network/
+│   └── ui/
+├── src/main/res/values/
+├── build.gradle.kts
+└── src/main/AndroidManifest.xml
+```
+
+## Android startup
 1. Open the repository in Android Studio.
-2. Let Gradle sync.
-3. Ensure JDK 17 is configured.
-4. Choose an emulator or physical device.
-5. Run the app module.
+2. Use JDK 17.
+3. Let Gradle sync.
+4. Run the app module on a device or emulator.
 
-## Run backend services
+## Backend startup
 ### Tika service
 ```bash
 cd backend/tika-service
@@ -45,13 +75,14 @@ pip install -r requirements.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8002
 ```
 
-## Upcoming production steps
-- Real PDF viewer integration
-- Real file picker and permission flow
-- Real Tika API endpoint integration
-- Real PDF-to-Word backend integration
-- Better Arabic localization and design polish
-- Room persistence for full document history
+## Production roadmap
+- Real PDF engine integration
+- Real file picker and permission handling
+- Real Tika API integration
+- Real conversion job logic
+- Better Arabic localization and UI polish
+- Secure upload/download workflow
+- Final deployment and testing
 
-## Repository status
-This repository now contains the operational foundation for a complete mobile document management app and is ready to be expanded through the implementation stages described in the docs.
+## Repository
+https://github.com/malkbaty7-sketch/Onerevers-

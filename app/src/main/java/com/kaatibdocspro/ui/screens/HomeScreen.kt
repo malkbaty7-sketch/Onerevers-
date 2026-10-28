@@ -41,6 +41,12 @@ fun HomeScreen(navController: NavHostController) {
                 Button(onClick = { navController.navigate(AppDestinations.PDF_TOOLS) }) {
                     Text("أدوات PDF")
                 }
+                Button(onClick = { navController.navigate(AppDestinations.BATCH_TOOLS) }) {
+                    Text("أدوات الدفعات")
+                }
+                Button(onClick = { navController.navigate(AppDestinations.DOCUMENT_DETAIL) }) {
+                    Text("تفاصيل المستند")
+                }
                 Button(onClick = { navController.navigate(AppDestinations.DOCUMENT_VIEWER) }) {
                     Text("عارض المستندات")
                 }
