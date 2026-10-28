@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.kaatibdocspro.ui.navigation.AppDestinations
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -34,20 +35,23 @@ fun HomeScreen(navController: NavHostController) {
                 modifier = Modifier.padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Button(onClick = { navController.navigate("document_list") }) {
+                Button(onClick = { navController.navigate(AppDestinations.DOCUMENT_LIST) }) {
                     Text("المستندات")
                 }
-                Button(onClick = { navController.navigate("pdf_tools") }) {
+                Button(onClick = { navController.navigate(AppDestinations.PDF_TOOLS) }) {
                     Text("أدوات PDF")
                 }
-                Button(onClick = { navController.navigate("document_viewer") }) {
+                Button(onClick = { navController.navigate(AppDestinations.DOCUMENT_VIEWER) }) {
                     Text("عارض المستندات")
                 }
-                Button(onClick = { navController.navigate("extraction") }) {
+                Button(onClick = { navController.navigate(AppDestinations.EXTRACTION) }) {
                     Text("استخراج النص")
                 }
-                Button(onClick = { navController.navigate("conversion") }) {
+                Button(onClick = { navController.navigate(AppDestinations.CONVERSION) }) {
                     Text("تحويل إلى Word")
+                }
+                Button(onClick = { navController.navigate(AppDestinations.SETTINGS) }) {
+                    Text("الإعدادات")
                 }
             }
         }

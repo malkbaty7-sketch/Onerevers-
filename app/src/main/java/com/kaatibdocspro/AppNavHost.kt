@@ -11,6 +11,7 @@ import com.kaatibdocspro.ui.screens.DocumentViewerScreen
 import com.kaatibdocspro.ui.screens.ExtractionScreen
 import com.kaatibdocspro.ui.screens.HomeScreen
 import com.kaatibdocspro.ui.screens.PdfToolsScreen
+import com.kaatibdocspro.ui.screens.SettingsScreen
 
 @Composable
 fun AppNavHost() {
@@ -42,6 +43,10 @@ fun AppNavHost() {
 
         composable(AppDestinations.CONVERSION) {
             ConversionScreen(navController)
+        }
+
+        composable(AppDestinations.SETTINGS) {
+            SettingsScreen(navController)
         }
     }
 }
