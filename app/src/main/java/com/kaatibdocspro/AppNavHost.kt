@@ -5,15 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kaatibdocspro.ui.navigation.AppDestinations
-import com.kaatibdocspro.ui.screens.BatchToolsScreen
-import com.kaatibdocspro.ui.screens.ConversionScreen
-import com.kaatibdocspro.ui.screens.DocumentDetailScreen
-import com.kaatibdocspro.ui.screens.DocumentListScreen
-import com.kaatibdocspro.ui.screens.DocumentViewerScreen
-import com.kaatibdocspro.ui.screens.ExtractionScreen
-import com.kaatibdocspro.ui.screens.HomeScreen
-import com.kaatibdocspro.ui.screens.PdfToolsScreen
-import com.kaatibdocspro.ui.screens.SettingsScreen
+import com.kaatibdocspro.ui.screens.*
 
 @Composable
 fun AppNavHost() {
@@ -23,40 +15,12 @@ fun AppNavHost() {
         navController = navController,
         startDestination = AppDestinations.HOME
     ) {
-        composable(AppDestinations.HOME) {
-            HomeScreen(navController)
-        }
-
-        composable(AppDestinations.DOCUMENT_LIST) {
-            DocumentListScreen(navController)
-        }
-
-        composable(AppDestinations.DOCUMENT_DETAIL) {
-            DocumentDetailScreen(navController)
-        }
-
-        composable(AppDestinations.PDF_TOOLS) {
-            PdfToolsScreen(navController)
-        }
-
-        composable(AppDestinations.BATCH_TOOLS) {
-            BatchToolsScreen(navController)
-        }
-
-        composable(AppDestinations.DOCUMENT_VIEWER) {
-            DocumentViewerScreen(navController)
-        }
-
-        composable(AppDestinations.EXTRACTION) {
-            ExtractionScreen(navController)
-        }
-
-        composable(AppDestinations.CONVERSION) {
-            ConversionScreen(navController)
-        }
-
-        composable(AppDestinations.SETTINGS) {
-            SettingsScreen(navController)
-        }
+        composable(AppDestinations.HOME) { HomeScreen(navController) }
+        composable(AppDestinations.DOCUMENT_LIST) { DocumentListScreen(navController) }
+        composable(AppDestinations.PDF_TOOLS) { PdfToolsScreen(navController) }
+        composable(AppDestinations.DOCUMENT_VIEWER) { DocumentViewerScreen(navController) }
+        composable(AppDestinations.EXTRACTION) { ExtractionScreen(navController) }
+        composable(AppDestinations.CONVERSION) { ConversionScreen(navController) }
+        composable(AppDestinations.SETTINGS) { SettingsScreen(navController) }
     }
 }
