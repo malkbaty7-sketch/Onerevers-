@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kaatibdocspro.ui.navigation.AppDestinations
 import com.kaatibdocspro.ui.screens.ConversionScreen
+import com.kaatibdocspro.ui.screens.DocumentListScreen
 import com.kaatibdocspro.ui.screens.DocumentViewerScreen
 import com.kaatibdocspro.ui.screens.ExtractionScreen
 import com.kaatibdocspro.ui.screens.HomeScreen
@@ -21,6 +22,10 @@ fun AppNavHost() {
     ) {
         composable(AppDestinations.HOME) {
             HomeScreen(navController)
+        }
+
+        composable(AppDestinations.DOCUMENT_LIST) {
+            DocumentListScreen(navController)
         }
 
         composable(AppDestinations.PDF_TOOLS) {

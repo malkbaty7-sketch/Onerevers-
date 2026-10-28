@@ -1,23 +1,35 @@
 package com.kaatibdocspro.data
 
+import android.content.Context
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
-class DocumentRepository {
-    private val sampleDocuments = listOf(
-        DocumentItem("Invoice_2026.pdf", "PDF", "34 MB", "Recently opened"),
-        DocumentItem("Contract_Arabic.docx", "DOCX", "2.8 MB", "Needs review"),
-        DocumentItem("Report.xlsx", "XLSX", "1.1 MB", "Export ready"),
-        DocumentItem("Manual.pdf", "PDF", "7.4 MB", "Shared"),
-        DocumentItem("ProjectSummary.pptx", "PPTX", "5.2 MB", "Presentation")
-    )
+class DocumentRepository(private val context: Context) {
+    private val database = DocumentDatabase.getDatabase(context)
 
-    fun getDocuments(): Flow<List<DocumentItem>> = flowOf(sampleDocuments)
+    val documents: Flow<List<DocumentEntity>> = database.documentDao().getAll()
+
+    suspend fun seedInitialDocuments() {
+        if (database.documentDao().count() > 0) return
+
+        val defaultDocs = listOf(
+            DocumentEntity(name = "Invoice_2026.pdf", type = "PDF", size = "3.2 MB", status = "Recently opened"),
+            DocumentEntity(name = "Contract_Arabic.docx", type = "DOCX", size = "1.7 MB", status = "Needs review"),
+            DocumentEntity(name = "Sales_Report.xlsx", type = "XLSX", size = "942 KB", status = "Ready"),
+            DocumentEntity(name = "Presentation.pptx", type = "PPTX", size = "5.8 MB", status = "Shared"),
+            DocumentEntity(name = "Notes_Archive.pdf", type = "PDF", size = "8.4 MB", status = "Saved")
+        )
+
+        defaultDocs.forEach { database.documentDao().insert(it) }
+    }
+
+    suspend fun addDocument(name: String, type: String, size: String, status: String) {
+        database.documentDao().insert(
+            DocumentEntity(
+                name = name,
+                type = type,
+                size = size,
+                status = status
+            )
+        )
+    }
 }
-
-data class DocumentItem(
-    val name: String,
-    val type: String,
-    val size: String,
-    val status: String
-)

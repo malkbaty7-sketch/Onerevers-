@@ -4,7 +4,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 data class ExtractionResponse(
-    val text: String,
+    val text: String = "",
     val metadata: Map<String, String> = emptyMap()
 )
 
@@ -17,6 +17,6 @@ interface DocumentApiService {
 }
 
 data class ConversionResponse(
-    val status: String,
+    val status: String = "queued",
     val outputFile: String = ""
 )

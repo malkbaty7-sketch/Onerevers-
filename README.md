@@ -10,42 +10,50 @@ KaatibDocsPro is a unified Android document management application that combines
 - PDF-to-Word conversion via a backend service
 - Document scanning and image tools
 - Local document archive and file history
+- Arabic-ready UI with Material 3
 
-## Design philosophy
-This project is structured as a single Android app shell that can integrate the best parts of:
-- Kaatib (app foundation and user experience)
-- ClearPDF (PDF and document toolkit)
-- Apache Tika (metadata and text extraction)
-- pdf2word (PDF to Word conversion service)
+## Source project roles
+### Kaatib
+- App shell and user experience
+- Main navigation and home flow
+
+### ClearPDF
+- PDF tools and document processing core
+
+### Apache Tika
+- Metadata and text extraction service
+
+### pdf2word
+- PDF-to-Word conversion pipeline
 
 ## Current project status
-The repository has been initialized as a working Android app shell and now includes:
-- Compose-based home screen
-- Navigation graph for app screens
+The repository now includes the following implemented stages:
+- Android app shell
+- Compose navigation graph
+- Document home and file list
 - PDF tools screen
-- Viewer placeholder
-- Extraction screen
-- Conversion screen
-- Data layer foundation
-- Settings abstraction using DataStore
-- Retrofit service skeleton for document APIs
+- Document viewer placeholder with metadata card
+- Extraction screen with result presentation
+- Conversion screen with progress-state interactions
+- Document repository and DataStore support
+- Room database foundation for saved document history
+- Retrofit service skeleton for external document APIs
 
 ## Suggested stack
 - Kotlin
 - Jetpack Compose
 - Material 3
-- Retrofit / Ktor for backend communication
-- Room for local history
-- DataStore for app preferences
-- Apache Tika and Python conversion service
+- Retrofit
+- Room
+- DataStore
+- Apache Tika + Python conversion backend
 
-## Next implementation stages
-1. Add document listing and file picker
-2. Add a real PDF document viewer
-3. Integrate extraction results screen with API response
-4. Implement conversion action with progress state
-5. Add Room database and document history persistence
-6. Add Arabic UI and localization
+## Next stage recommendations
+1. Add a real PDF rendering engine and document picker
+2. Connect actual file operations for PDF merge/split/compress
+3. Replace sample extraction data with a live Tika API call
+4. Add progress and completion states for conversion jobs
+5. Add Arabic localization and polish UI/UX
 
 ## Repository target
-This repository is intended to host the final integrated Android product while the original projects remain as references and integration sources.
+This repository is intended to host the final integrated Android product while the original reference projects continue to serve as technical sources and feature inspiration.

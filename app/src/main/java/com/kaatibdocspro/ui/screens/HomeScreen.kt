@@ -13,7 +13,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.kaatibdocspro.ui.navigation.AppDestinations
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -28,24 +27,27 @@ fun HomeScreen(navController: NavHostController) {
             text = "KaatibDocsPro",
             style = MaterialTheme.typography.headlineMedium
         )
-        Text(text = "Unified document toolkit")
+        Text(text = "منصة موحدة للوثائق والملفات")
 
         Card(modifier = Modifier.padding(top = 16.dp)) {
             Column(
                 modifier = Modifier.padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Button(onClick = { navController.navigate(AppDestinations.PDF_TOOLS) }) {
-                    Text("PDF Tools")
+                Button(onClick = { navController.navigate("document_list") }) {
+                    Text("المستندات")
                 }
-                Button(onClick = { navController.navigate(AppDestinations.DOCUMENT_VIEWER) }) {
-                    Text("Open Viewer")
+                Button(onClick = { navController.navigate("pdf_tools") }) {
+                    Text("أدوات PDF")
                 }
-                Button(onClick = { navController.navigate(AppDestinations.EXTRACTION) }) {
-                    Text("Extract Text")
+                Button(onClick = { navController.navigate("document_viewer") }) {
+                    Text("عارض المستندات")
                 }
-                Button(onClick = { navController.navigate(AppDestinations.CONVERSION) }) {
-                    Text("Convert PDF → Word")
+                Button(onClick = { navController.navigate("extraction") }) {
+                    Text("استخراج النص")
+                }
+                Button(onClick = { navController.navigate("conversion") }) {
+                    Text("تحويل إلى Word")
                 }
             }
         }

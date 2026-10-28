@@ -16,21 +16,23 @@ import androidx.navigation.NavHostController
 @Composable
 fun PdfToolsScreen(navController: NavHostController) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(24.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp),
         horizontalAlignment = Alignment.Start
     ) {
-        Text("PDF Tools", style = MaterialTheme.typography.headlineMedium)
-        Text("Merge, split, compress, scan and edit documents")
+        Text("أدوات PDF", style = MaterialTheme.typography.headlineMedium)
+        Text("دمج، تقسيم، ضغط، مسح، وتحرير وثائق PDF")
 
         Button(onClick = { navController.navigate("document_viewer") }) {
-            Text("Open PDF Viewer")
+            Text("فتح المعاينة")
         }
         Button(onClick = { navController.navigate("extraction") }) {
-            Text("Extract text")
+            Text("استخراج النص")
         }
         Button(onClick = { navController.navigate("conversion") }) {
-            Text("Convert to Word")
+            Text("تحويل إلى Word")
         }
     }
 }
