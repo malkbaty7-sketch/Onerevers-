@@ -18,23 +18,17 @@ This project is structured as a single Android app shell that can integrate the 
 - Apache Tika (metadata and text extraction)
 - pdf2word (PDF to Word conversion service)
 
-## Repository structure
-```text
-Onerevers-/
-├── app/
-│   └── src/main/
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── .gitignore
-├── README.md
-├── docs/
-│   └── INTEGRATION_PLAN.md
-└── gradlew
-```
-
-## Current status
-This repository has been initialized as the base project for the integrated Android document suite. It contains the basic Android app structure and the architecture plan needed to continue the implementation.
+## Current project status
+The repository has been initialized as a working Android app shell and now includes:
+- Compose-based home screen
+- Navigation graph for app screens
+- PDF tools screen
+- Viewer placeholder
+- Extraction screen
+- Conversion screen
+- Data layer foundation
+- Settings abstraction using DataStore
+- Retrofit service skeleton for document APIs
 
 ## Suggested stack
 - Kotlin
@@ -43,14 +37,15 @@ This repository has been initialized as the base project for the integrated Andr
 - Retrofit / Ktor for backend communication
 - Room for local history
 - DataStore for app preferences
-- Apache Tika and Python conversion service for advanced document processing
+- Apache Tika and Python conversion service
 
-## Next steps
-1. Add PDF viewer and document-management screens
-2. Integrate ClearPDF utilities into the app module
-3. Connect Apache Tika extraction API
-4. Add PDF-to-Word backend service
-5. Implement local storage and file management
+## Next implementation stages
+1. Add document listing and file picker
+2. Add a real PDF document viewer
+3. Integrate extraction results screen with API response
+4. Implement conversion action with progress state
+5. Add Room database and document history persistence
+6. Add Arabic UI and localization
 
 ## Repository target
-This repository is intended to host the final integrated Android product, while the original reference projects remain as sources and examples.
+This repository is intended to host the final integrated Android product while the original projects remain as references and integration sources.
