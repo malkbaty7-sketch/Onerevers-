@@ -1,37 +1,49 @@
 # KaatibDocsPro Architecture
 
-## Goal
-Build a single Android app that unifies document viewing, PDF tools, office document support, extraction, and conversion.
+## System overview
+KaatibDocsPro is a document suite for Android that combines a mobile frontend with document processing services.
 
-## Modules
+## Main layers
+### 1. Android app layer
+Responsibilities:
+- UI and navigation
+- file selection
+- document list
+- PDF tools menu
+- extraction screen
+- conversion screen
+- settings
 
-### App module
-- UI screens
-- ViewModel layer
-- Navigation graph
-- Data access layer
-
-### Local persistence
-- Room for document history
+### 2. Local persistence layer
+- Room database for document history
 - DataStore for app settings
 
-### Network layer
-- Retrofit client for backend services
-- API definitions for extraction and conversion endpoints
+### 3. Network layer
+- Retrofit client for backend communication
+- Moshi for API serialization
 
-### Backend services
+### 4. Backend services
 - Tika service for extraction
-- PDF to Word service for conversion
+- PDF-to-Word service for conversion
 
-## Recommended production flow
-1. User selects a file from device storage
-2. App shows metadata and document details
-3. User chooses action: view, extract, split, merge, convert
-4. App communicates with backend service when needed
-5. Result is stored locally and shown in UI
+## Recommended production architecture
+```text
+Android app (Compose)
+    |
+    +--> Local DB (Room)
+    |
+    +--> API Client (Retrofit)
+             |
+             +--> Tika service
+             |
+             +--> PDF2Word service
+```
 
-## Integration notes
-- Use API layer rather than embedding heavy Java/Python processing logic directly inside the Android app.
-- Keep Tika and pdf2word as small backend services for stability and maintainability.
-- Keep ClearPDF logic as the main document-processing source for PDF tools.
+## Future implementation priorities
+1. Integrate real document viewer and PDF engine
+2. Hook up actual file picker and permission logic
+3. Connect to real Tika server endpoint
+4. Connect to real conversion service endpoint
+5. Add robust error handling and progress states
+6. Add Arabic localization and final design polish
 

@@ -1,70 +1,39 @@
 # KaatibDocsPro integration plan
 
-## Project goals
-Build a unified Android app that combines the original Kaatib app experience with professional document handling capabilities.
+## High-level objective
+Integrate the main features from the source projects into a single Android app experience.
 
-## Source project roles
-### Kaatib
-- Main app shell
-- User flow and navigation
-- Arabic-first UI and experience
+## Project mapping
+- Kaatib => app shell and UX
+- ClearPDF => PDF features and office support
+- Tika => extraction and metadata
+- pdf2word => conversion backend
 
-### ClearPDF
-- PDF viewing and editing
-- Merge/split/compress utilities
-- Document scanning and image tools
-- Office file support
+## Planned phases
+### Phase 1: App shell
+- splash/home screen
+- navigation
+- document list
+- settings
 
-### Apache Tika
-- Extract text from PDF and office documents
-- Read metadata and document properties
-- Support multiple file types in a unified extraction layer
+### Phase 2: PDF tools
+- merge
+- split
+- compress
+- document scanning
 
-### pdf2word
-- Convert PDF files to Word documents through backend processing
-- Keep conversion logic outside the app using a service or API layer
+### Phase 3: Extraction engine
+- API integration with Tika
+- text result display
+- metadata display
 
-## Recommended architecture
-```text
-Android app (Kotlin + Compose)
-├── UI layer
-│   ├── Home
-│   ├── PDF tools
-│   ├── Viewer
-│   ├── Extract text
-│   └── Convert to Word
-├── Domain layer
-│   ├── Document use cases
-│   ├── Conversion use cases
-│   └── File management
-├── Data layer
-│   ├── Local repository
-│   ├── Retrofit client
-│   └── File storage abstraction
-└── External services
-    ├── Apache Tika backend
-    └── PDF to Word service
-```
+### Phase 4: Conversion engine
+- upload PDF to backend
+- download or preview DOCX result
 
-## Suggested technology stack
-- Kotlin
-- Jetpack Compose
-- Material 3
-- Retrofit
-- Room
-- DataStore
-- WorkManager
-- Tika server / extraction API
-- Python converter backend
+### Phase 5: Production hardening
+- permissions
+- security
+- storage
+- cleanup
 
-## Development stages
-1. Initialize Android app shell
-2. Implement document home and file browser
-3. Add PDF viewer and tools
-4. Add office file handling
-5. Implement extraction service
-6. Add PDF-to-Word conversion API integration
-7. Polish Arabic UI and user experience
-
-## Implementation note
-The app should treat Tika and pdf2word as external backend services where possible. This approach is more stable for Android than embedding heavy Java/Python document conversion logic directly into mobile code.
