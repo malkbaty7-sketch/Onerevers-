@@ -2,6 +2,17 @@
 
 KaatibDocsPro is a unified Android document platform that combines a modern Arabic-first user experience with enterprise-style document processing.
 
+## 📱 تحميل التطبيق كملف APK للهاتف عبر GitHub
+تم إعداد المستودع لبناء وتجهيز ملف **`KaatibDocsPro.apk`** تلقائياً عبر **GitHub Actions** عند كل تحديث (Push):
+
+1. **من قسم الإصدارات (Releases) — الأسهل للهاتف:**
+   - افتح رابط الإصدارات في المستودع من متصفح هاتفك:
+     [`https://github.com/malkbaty7-sketch/Onerevers-/releases`](https://github.com/malkbaty7-sketch/Onerevers-/releases)
+   - اضغط على **`KaatibDocsPro.apk`** تحت قسم **Assets** لتحميله وتثبيته مباشرة على هاتفك.
+2. **من تبويب GitHub Actions:**
+   - ادخل إلى تبويب **Actions** في GitHub، ثم اختر أحدث عملية بناء (**Build & Release Android APK**).
+   - من أسفل الصفحة في قسم **Artifacts**، قم بتحميل **`KaatibDocsPro-APK`**.
+
 ## Included capabilities
 - PDF file listing and browsing
 - PDF tools section (merge, split, compress, scan, manage)
