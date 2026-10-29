@@ -3,15 +3,18 @@
 KaatibDocsPro is a unified Android document platform that combines a modern Arabic-first user experience with enterprise-style document processing.
 
 ## 📱 تحميل التطبيق كملف APK للهاتف عبر GitHub
-تم إعداد المستودع لبناء وتجهيز ملف **`KaatibDocsPro.apk`** تلقائياً عبر **GitHub Actions** عند كل تحديث (Push):
+تم تجهيز ملف التطبيق الموقع والجاهز للتثبيت مباشرة داخل المستودع، بالإضافة إلى النشر التلقائي عبر **GitHub Actions**:
 
-1. **من قسم الإصدارات (Releases) — الأسهل للهاتف:**
+1. **التحميل المباشر الفوري من ملفات المستودع (الأسرع — لا يحتاج انتظار البناء):**
+   - ادخل إلى مجلد **`apk/`** في المستودع واختر ملف **`KaatibDocsPro.apk`**:
+     [`https://github.com/malkbaty7-sketch/Onerevers-/raw/main/apk/KaatibDocsPro.apk`](https://github.com/malkbaty7-sketch/Onerevers-/raw/main/apk/KaatibDocsPro.apk)
+   - أو افتح الملف من داخل المستودع واضغط على زر **Download raw file** لتحميله وتثبيته مباشرة على هاتفك.
+2. **من قسم الإصدارات (Releases):**
    - افتح رابط الإصدارات في المستودع من متصفح هاتفك:
      [`https://github.com/malkbaty7-sketch/Onerevers-/releases`](https://github.com/malkbaty7-sketch/Onerevers-/releases)
-   - اضغط على **`KaatibDocsPro.apk`** تحت قسم **Assets** لتحميله وتثبيته مباشرة على هاتفك.
-2. **من تبويب GitHub Actions:**
-   - ادخل إلى تبويب **Actions** في GitHub، ثم اختر أحدث عملية بناء (**Build & Release Android APK**).
-   - من أسفل الصفحة في قسم **Artifacts**، قم بتحميل **`KaatibDocsPro-APK`**.
+   - اضغط على **`KaatibDocsPro.apk`** تحت قسم **Assets**.
+3. **من تبويب GitHub Actions:**
+   - ادخل إلى تبويب **Actions** في GitHub، ثم اختر أحدث عملية (**Build & Release Android APK**) وحمّل **`KaatibDocsPro-APK`** من قسم **Artifacts**.
 
 ## Included capabilities
 - PDF file listing and browsing

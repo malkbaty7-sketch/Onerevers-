@@ -56,7 +56,7 @@ abstract class DocumentDatabase : RoomDatabase() {
                     context.applicationContext,
                     DocumentDatabase::class.java,
                     "kaatib_documents.db"
-                ).fallbackToDestructiveMigration().build()
+                ).fallbackToDestructiveMigration(true).build()
                 INSTANCE = instance
                 instance
             }
